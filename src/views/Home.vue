@@ -5,7 +5,8 @@
       <h1>Rp. {{ totalPrizeMoney }},-</h1>
     </div>
     <div>
-      <h1>Last Result = {{ result.num }} {{ result.color }}</h1>
+      <button @click="play">Play Game</button>
+      <h1>Last Result = {{ result }}</h1>
     </div>
     <div>
       <h4>Name</h4>
@@ -21,7 +22,20 @@
           <option
           v-for="prob in probability" :key="prob.num"
           >
-          {{ prob.num}}
+          {{ prob.num }}
+          </option>
+        </select>
+        <button type="submit">Bet</button>
+      </form>
+      <hr>
+      <form @submit.prevent="bettingColor">
+        <input type="number" placeholder="Your Bet" min="1" :max=yourMoney style="width:200px" v-model="bet"><br>
+        <select v-model="color">
+          <option value="red">
+            Red
+          </option>
+          <option value="black">
+            Black
           </option>
         </select>
         <button type="submit">Bet</button>
@@ -45,7 +59,8 @@ export default {
     return {
       name: '',
       bet: '',
-      num: ''
+      num: '',
+      color: ''
     }
   },
   computed: {
@@ -66,8 +81,14 @@ export default {
     }
   },
   methods: {
+    play () {
+      this.$socket.emit('play')
+    },
     betting () {
       this.$socket.emit('betting', { name: this.name, bet: this.bet, num: this.num })
+    },
+    bettingColor () {
+      this.$socket.emit('bettingByColor', { name: this.name, bet: this.bet, color: this.color })
     }
   },
   sockets: {

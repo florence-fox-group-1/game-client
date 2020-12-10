@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home text-white">
     <div>
       <h1>Total Money You can get</h1>
       <h1>Rp. {{ totalPrizeMoney.toLocaleString('id') }},-</h1>

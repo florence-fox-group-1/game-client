@@ -2,7 +2,7 @@
   <div class="home">
     <div>
       <h1>Total Money You can get</h1>
-      <h1>Rp. {{ totalPrizeMoney }},-</h1>
+      <h1>Rp. {{ totalPrizeMoney.toLocaleString('id') }},-</h1>
     </div>
     <div>
       <h1>Last Result = {{ result.num }} {{ result.color }}</h1>
@@ -28,12 +28,14 @@
       </form>
       </div>
     </div>
-    <div>
+    <!-- <div class="" >
         <h1>HISTORY</h1>
-        <p
-        v-for="(msg, id) in history" :key="id"
-        >{{ msg.message }}</p>
-    </div>
+        <div class="container overflow-auto" style="height: 200px;">
+            <p
+            v-for="(msg, id) in history" :key="id"
+            >{{ msg.message }}</p>
+        </div>
+    </div> -->
   </div>
 </template>
 

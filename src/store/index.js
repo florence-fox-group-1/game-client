@@ -9,7 +9,7 @@ export default new Vuex.Store({
     totalPrizeMoney: 0,
     yourMoney: 0,
     probability: {},
-    result: {}
+    result: ''
   },
   mutations: {
     SOCKET_init (state, payload) {
@@ -19,7 +19,7 @@ export default new Vuex.Store({
       state.yourMoney = 100000
     },
     SOCKET_messageWrong (state, payload) {
-      state.history.push({ message: payload.message })
+      state.history.unshift({ message: payload.message })
       state.totalPrizeMoney += +payload.bet
     },
     SOCKET_resultWrong (state, payload) {
@@ -29,11 +29,14 @@ export default new Vuex.Store({
       state.yourMoney += +payload.gain
       state.totalPrizeMoney = 50000
     },
+    SOCKET_resultRightColor (state, payload) {
+      state.yourMoney += +payload.gain
+    },
     SOCKET_messageRight (state, payload) {
-      state.history.push({ message: payload.message })
+      state.history.unshift({ message: payload.message })
     },
     SOCKET_message (state, payload) {
-      state.history.push({ message: payload.message })
+      state.history.unshift({ message: payload.message })
     },
     SOCKET_result (state, payload) {
       state.result = payload.result

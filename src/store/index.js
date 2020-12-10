@@ -19,7 +19,7 @@ export default new Vuex.Store({
       state.yourMoney = 100000
     },
     SOCKET_messageWrong (state, payload) {
-      state.history.push({ message: payload.message })
+      state.history.unshift({ message: payload.message })
       state.totalPrizeMoney += +payload.bet
     },
     SOCKET_resultWrong (state, payload) {
@@ -30,10 +30,10 @@ export default new Vuex.Store({
       state.totalPrizeMoney = 50000
     },
     SOCKET_messageRight (state, payload) {
-      state.history.push({ message: payload.message })
+      state.history.unshift({ message: payload.message })
     },
     SOCKET_message (state, payload) {
-      state.history.push({ message: payload.message })
+      state.history.unshift({ message: payload.message })
     },
     SOCKET_result (state, payload) {
       state.result = payload.result

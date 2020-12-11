@@ -9,7 +9,8 @@ export default new Vuex.Store({
     totalPrizeMoney: 0,
     yourMoney: 0,
     probability: {},
-    result: ''
+    result: '',
+    username: ''
   },
   mutations: {
     SOCKET_init (state, payload) {

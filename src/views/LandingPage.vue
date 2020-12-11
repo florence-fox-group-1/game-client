@@ -53,8 +53,9 @@ export default {
   },
   methods: {
     login () {
+      localStorage.setItem('ticket', 123)
       this.$store.commit('SET_USERNAME', this.username)
-      this.$router.push({ name: 'Home' })
+      this.$router.push({ name: 'MainPage' })
     }
   }
 }

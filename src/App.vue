@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div id="nav" >
-      <router-link to="/">Input Username</router-link> |
+      <!-- <router-link to="/">Input Username</router-link> |
       <router-link to="/Home">Number Roulette</router-link> |
-      <router-link to="/MainPage">Color Roulette</router-link>
+      <router-link to="/MainPage">Color Roulette</router-link> -->
     </div>
     <router-view/>
   </div>

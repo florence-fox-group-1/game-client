@@ -2,7 +2,7 @@
   <div>
     <b-card
       title="Total Prize Money"
-      img-src="https://image.freepik.com/free-vector/businessman-happy-get-money-reward-flat-design_27794-4.jpg"
+      img-src="https://i.pinimg.com/originals/f6/6a/56/f66a56d55a5342812cc6ee8d1d6c262a.jpg"
       img-alt="Image"
       img-top
       tag="article"

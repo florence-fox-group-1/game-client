@@ -2,15 +2,21 @@
 
   <div class="image" :style="image">
     <div class="" >
-      <div class="row" style="height: 90vh;">
+      <div class="row" style="height: 80vh;">
         <div class="col" >
-          <h4 class="text-white">Hi player</h4>
           <TotalPrizeMoney style="margin-top: 90px; margin-left:50px"></TotalPrizeMoney>
         </div>
         <div class="col-6">
           <!-- <Result></Result> -->
-          <Process></Process>
-
+        <div class="container">
+          <div class="input form">
+            <div class="row justify-content-center">
+              <div class="col-4">
+                <Process></Process>
+              </div>
+            </div>
+          </div>
+        </div>
         </div>
         <div class="col">
           <History style="margin-top: 90px; margin-right: 50px"/>

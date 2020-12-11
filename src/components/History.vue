@@ -1,9 +1,9 @@
 <template>
    <div class="text-white" >
-        <h1>HISTORY</h1>
-        <div class="container overflow-auto" style="height: 400px;">
+        <h1><strong>HISTORY</strong></h1>
+        <div class="container overflow-auto rounded p-3 mb-2 bg-info text-white" style="height: 380px;">
             <p
-            v-for="(msg, id) in history" :key="id" class="border border-primary"
+            v-for="(msg, id) in history" :key="id" class="border border-light rounded"
             >{{ msg.message }}</p>
         </div>
     </div>

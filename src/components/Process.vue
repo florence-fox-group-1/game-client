@@ -5,32 +5,33 @@
       <h1>Rp. {{ totalPrizeMoney.toLocaleString('id') }},-</h1>
     </div> -->
     <div>
-      <button @click="play" class="btn btn-success">Play Game</button>
+      <button class="btn btn-success btn-lg btn-block" @click="play">Play Game</button>
       <h1><span v-if="typeof result === 'string' && result !== ''">Last Result :</span> {{ result }}</h1>
     </div>
-    <div style="margin-top:100px">
-      <h4>Name</h4>
-      <input type="text" placeholder="Your Name" v-model="name"><br>
-      <h4>Your Money Rp. {{ yourMoney }},-</h4>
+    <div style="margin-top:50px">
+      <h4><strong>Name</strong></h4>
+      <input class="form-control" type="text" placeholder="Your Name" v-model="name"><br>
+      <h4>Your Money <strong>Rp.{{ yourMoney }},-</strong></h4>
       <div v-if="yourMoney == 0">
         <h1>Uangmu habis, sana cari Pinjol</h1>
       </div>
       <div v-else>
         <form @submit.prevent="betting">
-        <input type="number" placeholder="Your Bet" min="1" :max=yourMoney style="width:200px" v-model="bet"><br>
-        <select v-model="num">
+        <input class="form-control" type="number" placeholder="Your Bet" min="1" :max=yourMoney v-model="bet"><br>
+        <select class="form-control" v-model="num">
           <option
           v-for="prob in probability" :key="prob.num"
           >
           {{ prob.num }}
           </option>
         </select>
-        <button type="submit">Bet</button>
+        <br>
+        <button class="btn btn-info btn-lg btn-block" type="submit">Bet</button>
       </form>
-      <hr>
+      <br><br>
       <form @submit.prevent="bettingColor">
-        <input type="number" placeholder="Your Bet" min="1" :max=yourMoney style="width:200px" v-model="bet2"><br>
-        <select v-model="color">
+        <input class="form-control" type="number" placeholder="Your Bet" min="1" :max=yourMoney v-model="bet2"><br>
+        <select class="form-control" v-model="color">
           <option value="red">
             Red
           </option>
@@ -38,7 +39,8 @@
             Black
           </option>
         </select>
-        <button type="submit">Bet</button>
+        <br>
+        <button class="btn btn-info btn-lg btn-block" type="submit">Bet</button>
       </form>
       </div>
     </div>
@@ -90,6 +92,9 @@ export default {
     },
     bettingColor () {
       this.$socket.emit('bettingByColor', { name: this.name, bet: this.bet, color: this.color })
+    },
+    nextTick () {
+      this.$router.push({ name: 'LandingPage' })
     }
   },
   sockets: {

@@ -13,7 +13,7 @@ Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 
 Vue.use(new VueSocketIO({
-  connection: 'http://localhost:3000',
+  connection: 'https://togelmania.herokuapp.com',
   vuex: {
     store,
     actionPrefix: 'SOCKET_',

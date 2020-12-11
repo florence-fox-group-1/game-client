@@ -1,13 +1,14 @@
 <template>
-  <div class="home text-white">
-    <div>
+   <div class="home text-white">
+    <!-- <div>
       <h1>Total Money You can get</h1>
       <h1>Rp. {{ totalPrizeMoney.toLocaleString('id') }},-</h1>
-    </div>
+    </div> -->
     <div>
-      <h1>Last Result = {{ result.num }} {{ result.color }}</h1>
+      <button @click="play" class="btn btn-success">Play Game</button>
+      <h1><span v-if="typeof result === 'string' && result !== ''">Last Result :</span> {{ result }}</h1>
     </div>
-    <div>
+    <div style="margin-top:100px">
       <h4>Name</h4>
       <input type="text" placeholder="Your Name" v-model="name"><br>
       <h4>Your Money Rp. {{ yourMoney }},-</h4>
@@ -21,20 +22,31 @@
           <option
           v-for="prob in probability" :key="prob.num"
           >
-          {{ prob.num}}
+          {{ prob.num }}
+          </option>
+        </select>
+        <button type="submit">Bet</button>
+      </form>
+      <hr>
+      <form @submit.prevent="bettingColor">
+        <input type="number" placeholder="Your Bet" min="1" :max=yourMoney style="width:200px" v-model="bet2"><br>
+        <select v-model="color">
+          <option value="red">
+            Red
+          </option>
+          <option value="black">
+            Black
           </option>
         </select>
         <button type="submit">Bet</button>
       </form>
       </div>
     </div>
-    <!-- <div class="" >
+    <!-- <div>
         <h1>HISTORY</h1>
-        <div class="container overflow-auto" style="height: 200px;">
-            <p
-            v-for="(msg, id) in history" :key="id"
-            >{{ msg.message }}</p>
-        </div>
+        <p
+        v-for="(msg, id) in history" :key="id"
+        >{{ msg.message }}</p>
     </div> -->
   </div>
 </template>
@@ -47,7 +59,9 @@ export default {
     return {
       name: '',
       bet: '',
-      num: ''
+      bet2: '',
+      num: '',
+      color: ''
     }
   },
   computed: {
@@ -68,8 +82,14 @@ export default {
     }
   },
   methods: {
+    play () {
+      this.$socket.emit('play')
+    },
     betting () {
       this.$socket.emit('betting', { name: this.name, bet: this.bet, num: this.num })
+    },
+    bettingColor () {
+      this.$socket.emit('bettingByColor', { name: this.name, bet: this.bet, color: this.color })
     }
   },
   sockets: {

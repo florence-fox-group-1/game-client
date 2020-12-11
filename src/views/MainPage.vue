@@ -7,7 +7,7 @@
           <TotalPrizeMoney style="margin-top: 90px; margin-left:50px"></TotalPrizeMoney>
         </div>
         <div class="col-6">
-          <Result></Result>
+          <!-- <Result></Result> -->
           <Process></Process>
         </div>
         <div class="col">
@@ -21,7 +21,7 @@
 <script>
 import TotalPrizeMoney from '../components/TotalPrizeMoney'
 // import HelloWorld from '../components/HelloWorld'
-import Result from '../components/Result'
+// import Result from '../components/Result'
 import Process from '../components/Process'
 import History from '../components/History'
 
@@ -29,7 +29,7 @@ export default {
   name: 'MainPage',
   components: {
     TotalPrizeMoney,
-    Result,
+    // Result,
     Process,
     History
   },

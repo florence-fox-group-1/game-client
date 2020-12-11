@@ -9,7 +9,7 @@
       style="max-width: 20rem;"
       class="mb-2"
     >
-    <h5>$ {{ prizeMoney.toLocaleString('id') }}</h5>
+    <h5>Rp {{ totalPrizeMoney.toLocaleString('id') }}</h5>
     </b-card>
   </div>
 </template>
@@ -19,6 +19,11 @@ export default {
   data () {
     return {
       prizeMoney: 900000000
+    }
+  },
+  computed: {
+    totalPrizeMoney () {
+      return this.$store.state.totalPrizeMoney
     }
   }
 }

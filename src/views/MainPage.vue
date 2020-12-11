@@ -1,9 +1,8 @@
 <template>
-  <div class="image" :style="image">
+  <div id="backgroundImg" class="image w-100">
     <div class="" >
       <div class="row" style="height: 90vh;">
         <div class="col" >
-          <h4 class="text-white">Hi player</h4>
           <TotalPrizeMoney style="margin-top: 90px; margin-left:50px"></TotalPrizeMoney>
         </div>
         <div class="col-6">
@@ -35,7 +34,7 @@ export default {
   },
   data () {
     return {
-      image: { backgroundImage: 'url(https://previews.123rf.com/images/stockstudio44/stockstudio441706/stockstudio44170600301/81016243-casino-blurred-background-roulette-and-stacks-of-chips-.jpg)' }
+      image: { backgroundImage: 'url(https://static1.bigstockphoto.com/2/9/2/large1500/292557460.jpg)' }
     }
   }
 }
@@ -45,5 +44,25 @@ export default {
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent; /* make scrollbar transparent */
+}
+
+#show_bg {
+    /* background-image: url('images/background.jpg'); */
+    width: 80%;
+    height: 200px;
+    background-size: cover;
+    color: white;
+}
+
+#backgroundImg {
+  background-image: url('https://static1.bigstockphoto.com/2/9/2/large1500/292557460.jpg');
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 </style>

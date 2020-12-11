@@ -19,7 +19,7 @@
       </div>
       <div v-else>
         <form @submit.prevent="betting">
-        <input class="form-control" type="number" placeholder="Your Bet" min="1" :max=yourMoney v-model="bet"><br>
+        <input type="number" placeholder="Your Bet" min="1" :max=yourMoney v-model="bet"><br>
         <select v-model="num">
           <option
           v-for="prob in probability" :key="prob.num"

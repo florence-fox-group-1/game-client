@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
       <div class="col-4">
       <form id="signin" @submit.prevent="login">
-        <h1>Login</h1>
+        <h1>Input Username</h1>
         <br />
         <div class="form-group rounded">
           <label for="input-username">Username</label><br>
@@ -17,12 +17,12 @@
           />
           <br>
           <small id="username" class="form-text text-muted"
-            >We'll never share your email with anyone else.</small
+            >Play the game and be famous.</small
           >
         </div>
         <br>
-        <button type="submit" class="btn btn-outline-dark inputButton">
-          Log In
+        <button type="submit" class="btn btn-outline-success inputButton">
+          Submit
         </button>
       </form>
       </div>

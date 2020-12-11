@@ -10,15 +10,15 @@
       <h1 class="mt-4 text-primary"><span v-if="typeof result === 'string' && result !== ''">Last Result :</span> {{ result }}</h1>
     </div>
     <div style="margin-top:100px">
-      <h4>Name</h4>
-      <input type="text" placeholder="Your Name" v-model="name"><br><br>
+      <h1 class="text-primary">Hi {{ name }}</h1>
+      <!-- <input type="text" placeholder="Your Name" v-model="name"><br><br> -->
       <h2 class="border border-danger bg-dark text-danger w-auto mb-3 w-25">Your Money Rp. {{ yourMoney.toLocaleString('id') }},-</h2>
       <div v-if="yourMoney == 0 || yourMoney < 0">
         <h1>Uangmu habis, sana cari Pinjol</h1>
       </div>
       <div v-else>
         <div>
-            <div class="input-group mb-3 w-50 m-auto">
+            <div class="input-group mb-3  m-auto">
                 <div class="input-group-prepend">
                     <label class="input-group-text" for="inputGroupSelect01">Choose Bet Category</label>
                 </div>
@@ -83,7 +83,6 @@ export default {
   name: 'Home',
   data () {
     return {
-      name: '',
       bet: 100000,
       bet2: '',
       num: '',
@@ -114,6 +113,9 @@ export default {
     },
     result () {
       return this.$store.state.result
+    },
+    name () {
+      return this.$store.state.username
     }
   },
   methods: {

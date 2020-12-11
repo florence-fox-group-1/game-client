@@ -40,6 +40,9 @@ export default new Vuex.Store({
     },
     SOCKET_result (state, payload) {
       state.result = payload.result
+    },
+    SET_USERNAME (state, payload) {
+      state.username = payload
     }
   },
   actions: {

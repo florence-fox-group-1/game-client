@@ -1,4 +1,5 @@
 <template>
+
   <div class="image" :style="image">
     <div class="" >
       <div class="row" style="height: 90vh;">
@@ -9,9 +10,10 @@
         <div class="col-6">
           <!-- <Result></Result> -->
           <Process></Process>
+
         </div>
         <div class="col">
-          <History style="margin-top: 90px; margin-right:50px"></History>
+          <History style="margin-top: 90px; margin-right: 50px"/>
         </div>
       </div>
     </div>
@@ -20,8 +22,10 @@
 
 <script>
 import TotalPrizeMoney from '../components/TotalPrizeMoney'
+
 // import HelloWorld from '../components/HelloWorld'
 // import Result from '../components/Result'
+
 import Process from '../components/Process'
 import History from '../components/History'
 

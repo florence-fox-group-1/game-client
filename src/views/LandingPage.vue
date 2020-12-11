@@ -28,7 +28,7 @@
       <br><br>
       <hr>
       <div>
-        <h2>RULES MINI ROULETTE</h2>
+        <h2>TOGEL MANIA MANTAP!!!</h2>
         <br>
         <p>Terdapat 2 tipe permainan, yaitu Bet Number dan Bet Color.
           Bet Number akan otomatis mempertaruhkan seluruh uangmu, tapi hadiahnya adalah seluruh Total Money Prize.

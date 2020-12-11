@@ -1,5 +1,5 @@
 <template>
-   <div class="" >
+   <div class="text-white" >
         <h1>HISTORY</h1>
         <div class="container overflow-auto" style="height: 400px;">
             <p

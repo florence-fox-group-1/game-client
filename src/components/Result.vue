@@ -16,8 +16,8 @@
     >
       Reset
     </button>
-    <h2 class="mt-5 mb-5" v-if="countDown > 0">{{ countDown }}s</h2>
-    <h2 class="mt-5 mb-5" v-else>Its a {{ color }}</h2>
+    <h2 class="mt-5 mb-5 text-white" v-if="countDown > 0">{{ countDown }}s</h2>
+    <h2 class="mt-5 mb-5 text-white" v-else>Its a {{ color }}</h2>
     <!-- <div class="card text-black bg-light mb-3 ml-5 mr-5 mt-5" v-if="countDown === 0" >
       <div class="card-header"><strong>RESULT</strong></div>
       <div class="card-body">
